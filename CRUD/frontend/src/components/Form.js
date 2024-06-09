@@ -73,26 +73,32 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       return toast.warn("Preencha todos os campos!");
     }
 
-    const userData = {
-      nome: user.nome.value,
-      sobrenome: user.sobrenome.value,
-      cpf: user.cpf.value,
-      celular: user.celular.value,
-      email: user.email.value,
-      senha: user.senha.value,
-      id_endereco: user.id_endereco.value,
-    };
-
-    try {
-      if (onEdit) {
-        const { data } = await axios.put(`http://localhost:8800/${onEdit.id}`, userData);
-        toast.success(data);
-      } else {
-        const { data } = await axios.post("http://localhost:8800", userData);
-        toast.success(data);
-      }
-    } catch (error) {
-      toast.error(error.response.data);
+    if (onEdit) {
+      await axios
+        .put("http://localhost:8800/" + onEdit.id, {
+          nome: user.nome.value,
+          sobrenome: user.sobrenome.value,
+          cpf: user.cpf.value,
+          celular: user.celular.value,
+          email: user.email.value,
+          senha: user.senha.value,
+          id_endereco: user.id_endereco.value,
+        })
+        .then(({ data }) => toast.success(data))
+        .catch(({ data }) => toast.error(data));
+    } else {
+      await axios
+        .post("http://localhost:8800", {
+          nome: user.nome.value,
+          sobrenome: user.sobrenome.value,
+          cpf: user.cpf.value,
+          celular: user.celular.value,
+          email: user.email.value,
+          senha: user.senha.value,
+          id_endereco: user.id_endereco.value,
+        })
+        .then(({ data }) => toast.success(data))
+        .catch(({ data }) => toast.error(data));
     }
 
     user.nome.value = "";
