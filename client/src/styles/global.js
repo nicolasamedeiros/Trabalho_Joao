@@ -1,20 +1,21 @@
-import { createGlobalStyle } from "styled-components";
+// Importação necessária
+import { createGlobalStyle } from "styled-components"; // Importa a função para criar estilos globais
 
+// Definição de estilos globais
 const Global = createGlobalStyle`
-
   * {
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins', sans-serif;
+    margin: 0; // Remove a margem de todos os elementos
+    padding: 0; // Remove o preenchimento de todos os elementos
+    font-family: 'Poppins', sans-serif; // Define a fonte padrão para todos os elementos
   }
   
   body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    background-color: #f2f2f2;
+    
+    display: flex; // Aplica o modelo de layout flexbox ao corpo
+    justify-content: rigth; // Centraliza o conteúdo horizontalmente
+    background-color: #f2f2f2; // Define a cor de fundo do corpo
   }
 `;
 
+// Exporta os estilos globais como padrão
 export default Global;
