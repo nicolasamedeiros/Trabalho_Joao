@@ -1,4 +1,3 @@
-// Importa a instância do banco de dados
 import { db } from "../db.js";
 
 // Função para obter todos os usuários

@@ -1,6 +1,5 @@
-// Importações necessárias
 import axios from "axios"; // Biblioteca para fazer requisições HTTP
-import React, { useEffect, useRef } from "react"; // Importações do React para lidar com efeitos colaterais e referências
+import React, { useEffect, useRef } from "react"; 
 import styled from "styled-components"; // Biblioteca para criar componentes estilizados
 import { toast } from "react-toastify"; // Biblioteca para exibir notificações
 

@@ -1,4 +1,3 @@
-// Importa a biblioteca mysql
 import mysql from "mysql";
 
 // Cria uma conexão com o banco de dados MySQL

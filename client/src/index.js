@@ -1,5 +1,4 @@
-// Importações necessárias
-import React from 'react'; // Importa a biblioteca principal do React
+import React from 'react'; 
 import ReactDOM from 'react-dom/client'; // Importa o módulo para renderização no DOM
 import App from './App'; // Importa o componente principal do aplicativo
 
